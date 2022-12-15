@@ -135,6 +135,12 @@
           "include": "#operator"
         },
         {
+          "include": "#boolean"
+        },
+        {
+          "include": "#object-literal"
+        },
+        {
           "name": "meta.bracket.list",
           "begin": "\\[",
           "end": "\\]",
@@ -201,6 +207,10 @@
         }
       ]
     },
+    "boolean": {
+      "name": "constant.language.boolean",
+      "match": "\\b(true|false)\\b"
+    },
     "keyword": {
       "patterns": [
         {
@@ -245,6 +255,27 @@
           "name": "entity.name.type.resource"
         }
       }
+    },
+    "object-literal": {
+      "name": "constant.other.object-literal",
+      "begin": "([a-zA-Z_][a-zA-Z0-9_]*(?:::[a-zA-Z0-9_]+)*)\\s*\\{",
+      "beginCaptures": {
+        "1": {
+          "name": "entity.name.type.resource"
+        }
+      },
+      "end": "\\}",
+      "patterns": [
+        {
+          "include": "#string"
+        },
+        {
+          "include": "#number"
+        },
+        {
+          "include": "#boolean"
+        }
+      ]
     }
   },
   "scopeName": "source.polar"
