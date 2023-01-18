@@ -16,6 +16,9 @@
     },
     {
       "include": "#resource-block"
+    },
+    {
+      "include": "#test-block"
     }
   ],
   "repository": {
@@ -117,6 +120,43 @@
         },
         {
           "include": "#term"
+        }
+      ]
+    },
+    "test-block": {
+      "name": "meta.test-block",
+      "begin": "(test)\\s+(\"[^\"]*\")\\s*\\{",
+      "beginCaptures": {
+        "1": {
+          "name": "keyword.control"
+        },
+        "2": {
+          "name": "string.quoted.double"
+        }
+      },
+      "end": "\\}",
+      "patterns": [
+        {
+          "name": "meta.test-setup",
+          "begin": "(setup)\\s*\\{",
+          "beginCaptures": {
+            "1": {
+              "name": "keyword.control"
+            }
+          },
+          "end": "\\}",
+          "patterns": [
+            {
+              "include": "#rule"
+            }
+          ]
+        },
+        {
+              "include": "#rule"
+        },
+        {
+          "name": "keyword.other",
+          "match": "\\b(assert|assert_not)\\b"
         }
       ]
     },
