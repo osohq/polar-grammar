@@ -148,6 +148,9 @@
           "patterns": [
             {
               "include": "#rule"
+            },
+            {
+              "include": "#comment"
             }
           ]
         },
@@ -157,6 +160,9 @@
         {
           "name": "keyword.other",
           "match": "\\b(assert|assert_not)\\b"
+        },
+        {
+          "include": "#comment"
         }
       ]
     },
