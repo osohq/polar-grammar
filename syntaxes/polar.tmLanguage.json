@@ -19,12 +19,37 @@
     },
     {
       "include": "#test-block"
+    },
+    {
+      "include": "#fixture"
     }
   ],
   "repository": {
     "comment": {
       "name": "comment.line.number-sign",
       "match": "#.*"
+    },
+    "fixture": {
+      "patterns": [
+        {
+          "match": "\\bfixture\\b",
+          "name": "keyword.control"
+        },
+        {
+          "begin": "\\btest\\b",
+          "beginCaptures": {
+            "0": {
+              "name": "keyword.control"
+            }
+          },
+          "end": "\\bfixture\\b",
+          "endCaptures": {
+            "0": {
+              "name": "keyword.control"
+            }
+          }
+        }
+      ]
     },
     "rule": {
       "name": "meta.rule",
@@ -167,6 +192,9 @@
             },
             {
               "include": "#comment"
+            },
+            {
+              "include": "#fixture"
             }
           ]
         },
