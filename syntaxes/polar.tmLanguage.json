@@ -332,7 +332,7 @@
     "keyword": {
       "patterns": [
         {
-          "match": "\\b(cut|or|debug|print|in|forall|if|and|of|not|matches|type|on|global)\\b",
+          "match": "\\b(or|in|if|and|of|not|matches|type|on|global)\\b",
           "name": "constant.character"
         }
       ]
